@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HSS Awards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="list">
+    <header class="header container flex-col">
+        <h1 class="site-title">History of Science Society</h1>
+        <h2 class="subheader">Award-Winning Books in the History of Science</h2>
+    </header>
+    <section class="filters flex-row">
+        <input class="search" type="text" placeholder="Search...">
+        <div class="buttons flex-row">
+            <button class="sort" data-sort="prize">Prize</button>
+            <button class="sort" data-sort="title">Title</button>
+            <button class="sort" data-sort="prizeyear">Prize&nbsp;Year</button>
+            <button class="sort" data-sort="pubyear">Publication&nbsp;Year</button>
+            <button class="sort" data-sort="author">Author</button>
+        </div>
+    </section>
+    <section class="container flex-row list">
+        {{#each awards}}
+        <article class="card-container" data-title="{{title}}" data-prize="{{prize}}" data-author="{{author}}"
+            data-year="{{prizeYear}}">
+            <a class="card-link flex-col" href="{{url}}">
+                <header class="card-header">
+
+                    <img class="bg-img" src="{{img}}">
+
+                    <img class="book-cover" src="{{img}}">
+                </header>
+                <div class="card-divider flex-row"></div>
+                <section class="card-body flex-col">
+
+                    <p class="prize">{{prize}} <span class="prizeyear">{{prizeYear}}</span></p>
+
+                    <h2 class="title">{{title}}</h2>
+                    <p class="publisher">{{pub}}, <span class="pubyear">{{pubYear}}</span></p>
+                    <p class="author" data-last="{{last}}">{{author}}</p>
+                </section>
+            </a>
+        </article>
+        {{/each}}
+    </section>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+    <script>
+        const options = {
+            valueNames: ['title', 'prize', 'prizeyear', 'pubyear',
+                { name: 'author', attr: 'data-last' }]
+        };
+
+        const prizes = new List('list', options);
+        console.log(prizes)
+    </script>
+</body>
+
+</html>
