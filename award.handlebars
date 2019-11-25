@@ -10,24 +10,40 @@
 </head>
 
 <body id="list">
+    <nav class="nav">
+        <ul class="item-container flex-row">
+            <li class="item"><a href="https://hssonline.org">History of Science Society</a></li>
+            <li class="item"><a href="https://hssonline.org">About our Prizes</a></li>
+            <li class="item"><a href="https://hssonline.org">Submit a Nomination</a></li>
+            <li class="item"><a href="https://hssonline.org">Join HSS</a></li>
+            <li class="item"><a href="https://hssonline.org">Support HSS</a></li>
+        </ul>
+    </nav>
+
     <header class="header container flex-col">
-        <h1 class="site-title">History of Science Society</h1>
+        <h1 class="site-title">History of Science&nbsp;Society</h1>
         <h2 class="subheader">Award-Winning Books in the History of Science</h2>
     </header>
+
     <section class="filters flex-row">
-        <input class="search" type="text" placeholder="Search...">
-        <div class="buttons flex-row">
-            <button class="sort" data-sort="prize">Prize</button>
-            <button class="sort" data-sort="title">Title</button>
-            <button class="sort" data-sort="prizeyear">Prize&nbsp;Year</button>
-            <button class="sort" data-sort="pubyear">Publication&nbsp;Year</button>
-            <button class="sort" data-sort="author">Author</button>
+        <div class="container">
+            <input class="search" type="text" placeholder="Search.." aria-label="search">
+            <div class="buttons-container">
+                <p class="sort-style">Sort&nbsp;⇅</p>
+                <div class="buttons flex-row">
+                    <button class="sort" data-sort="prize">Prize</button>
+                    <button class="sort" data-sort="title">Title</button>
+                    <button class="sort" data-sort="prizeyear">Prize&nbsp;Year</button>
+                    <button class="sort" data-sort="pubyear">Publication&nbsp;Year</button>
+                    <button class="sort" data-sort="author">Author</button>
+                </div>
+            </div>
         </div>
     </section>
     <section class="container flex-row list">
         {{#each awards}}
-        <article class="card-container" data-title="{{title}}" data-prize="{{prize}}" data-author="{{author}}"
-            data-year="{{prizeYear}}">
+        <article aria-label="{{title}} by {{author}}" class="card-container" data-title="{{title}}"
+            data-prize="{{prize}}" data-author="{{author}}" data-year="{{prizeYear}}">
             <a class="card-link flex-col" href="{{url}}">
                 <header class="card-header">
 
@@ -37,11 +53,11 @@
                 </header>
                 <div class="card-divider flex-row"></div>
                 <section class="card-body flex-col">
-
-                    <p class="prize">{{prize}} <span class="prizeyear">{{prizeYear}}</span></p>
-
-                    <h2 class="title">{{title}}</h2>
-                    <p class="publisher">{{pub}}, <span class="pubyear">{{pubYear}}</span></p>
+                    <div class="card-body-top flex-col">
+                        <p class="prize">{{prize}} <span class="prizeyear">{{prizeYear}}</span></p>
+                        <h2 class="title">{{title}}</h2>
+                        <p class="publisher">{{pub}}, <span class="pubyear">{{pubYear}}</span></p>
+                    </div>
                     <p class="author" data-last="{{last}}">{{author}}</p>
                 </section>
             </a>
@@ -49,15 +65,13 @@
         {{/each}}
     </section>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js" crossorigin></script>
     <script>
         const options = {
             valueNames: ['title', 'prize', 'prizeyear', 'pubyear',
                 { name: 'author', attr: 'data-last' }]
         };
-
         const prizes = new List('list', options);
-        console.log(prizes)
     </script>
 </body>
 
