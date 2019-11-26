@@ -1,4 +1,4 @@
 # History of Science Society
-## Award-Winning Books in the History of Science
+Award-Winning Books in the History of Science
 
-[](https://hssonline.org/books/meta.jpg)
+[![HSS award-winning books](https://hssonline.org/books/meta.jpg)](https://hssonline.org/books/)
