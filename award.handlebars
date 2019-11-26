@@ -5,18 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HSS Awards</title>
+    <title>HSS Award-Winning Books in the History of Science</title>
+    <meta name="description"
+        content="Award-winning books in the history of science, as recognized by the History of Science Society. Search, sort, and find your next read in the history of science.">
     <link rel="stylesheet" href="style.css">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@hssonline">
+    <meta name="twitter:title" content="HSS Award-Winning Books in the History of Science">
+    <meta name="twitter:description"
+        content="Award-winning books in the history of science, as recognized by the History of Science Society. Search, sort, and find your next read in the history of science.">
+    <meta name="twitter:creator" content="@theroyalfig">
+    <meta name="twitter:image" content="https://hssonline.org/books/meta.jpg">
+
+    <meta property="og:title" content="HSS Award-Winning Books in the History of Science" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://hssonline.org/books" />
+    <meta property="og:image" content="https://hssonline.org/books/meta.jpg" />
+    <meta property="og:description"
+        content="Award-winning books in the history of science, as recognized by the History of Science Society. Search, sort, and find your next read in the history of science." />
+    <meta property="og:site_name" content="History of Science Society" />
+    <meta property="fb:admins" content="77247831395" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5101015-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-5101015-2');
+    </script>
+
 </head>
 
 <body id="list">
     <nav class="nav">
         <ul class="item-container flex-row">
             <li class="item"><a href="https://hssonline.org">History of Science Society</a></li>
-            <li class="item"><a href="https://hssonline.org">About our Prizes</a></li>
-            <li class="item"><a href="https://hssonline.org">Submit a Nomination</a></li>
-            <li class="item"><a href="https://hssonline.org">Join HSS</a></li>
-            <li class="item"><a href="https://hssonline.org">Support HSS</a></li>
+            <li class="item"><a href="https://hssonline.org/about/honors/">About our Prizes</a></li>
+            <li class="item"><a href="https://hssonline.formstack.com/forms/prize_nominations">Submit a Nomination</a>
+            </li>
+            <li class="item"><a href="https://hssonline.org/membership/subscriptions/">Join HSS</a></li>
+            <li class="item"><a href="https://hssonline.org/get-involved/giving-to-the-hss/">Support HSS</a></li>
         </ul>
     </nav>
 
@@ -25,7 +55,7 @@
         <h2 class="subheader">Award-Winning Books in the History of Science</h2>
     </header>
 
-    <section class="filters flex-row">
+    <section id="top" class="filters flex-row">
         <div class="container">
             <input class="search" type="text" placeholder="Search.." aria-label="search">
             <div class="buttons-container">
@@ -47,9 +77,9 @@
             <a class="card-link flex-col" href="{{url}}">
                 <header class="card-header">
 
-                    <img class="bg-img" src="{{img}}">
+                    <img class="bg-img" alt="" src="{{img}}">
 
-                    <img class="book-cover" src="{{img}}">
+                    <img class="book-cover" alt="{{title}} by {{author}}" src="{{img}}">
                 </header>
                 <div class="card-divider flex-row"></div>
                 <section class="card-body flex-col">
@@ -63,7 +93,12 @@
             </a>
         </article>
         {{/each}}
+
     </section>
+    <footer class="footer container">
+        <p>Titles above include affiliate links to books. HSS may receive a small commission for purchases
+            made through these links.</p>
+    </footer>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js" crossorigin></script>
     <script>

@@ -23,5 +23,5 @@ context.awards.sort((a, b) => {
 fs.readFile('award.handlebars', 'utf-8', (err, source) => {
     const template = hbs.compile(source);
     const html = template(context);
-    fs.writeFileSync('index.html', html)
+    fs.writeFileSync('dist/index.html', html)
 });
